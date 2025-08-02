@@ -8,7 +8,7 @@
   <style>
     body {
       font-family: 'Poppins', sans-serif;
-      background: #e8f5e9;
+      background: #eef7f0;
       margin: 0;
       padding: 40px;
       text-align: center;
@@ -16,88 +16,81 @@
     }
 
     #logo {
-      width: 150px;
-      transform: scale(0);
-      animation: zoomIn 2s forwards;
+      width: 120px;
+      position: fixed;
+      bottom: 40px;
+      left: 40px;
     }
 
-    .plant {
-      background: #fff;
+    .plant-card {
+      max-width: 700px;
+      margin: 0 auto;
+      background: white;
       padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-      display: inline-block;
-      text-align: left;
-      max-width: 500px;
-      margin-top: 40px;
-      opacity: 0;
-      transform: translateY(40px);
-      animation: slideUp 1s forwards;
-      animation-delay: 2s; /* after logo finishes zooming */
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      animation: fadeIn 1.5s ease-out;
     }
 
-    .plant img {
+    .plant-card img {
       width: 100%;
-      height: auto;
-      border-radius: 8px;
-      margin-bottom: 15px;
-      transition: transform 0.5s ease;
+      border-radius: 50%;
+      max-width: 400px;
+      margin-bottom: 20px;
+      animation: zoomIn 1.8s ease-out;
     }
 
-    .plant img:hover {
-      transform: scale(1.05);
-    }
-
-    .plant h2 {
-      margin: 0;
+    h1 {
       font-size: 2em;
-      opacity: 0;
-      animation: fadeIn 1s forwards;
-      animation-delay: 2.5s;
+      margin-bottom: 10px;
     }
 
-    .plant em {
-      display: block;
-      color: #555;
-      margin-top: 5px;
-      opacity: 0;
-      animation: fadeIn 1s forwards;
-      animation-delay: 2.8s;
+    .taxo {
+      color: #444;
+      font-size: 1em;
+      margin-bottom: 15px;
     }
 
-    .plant p {
-      margin-top: 15px;
-      line-height: 1.5;
-      opacity: 0;
-      animation: fadeIn 1s forwards;
-      animation-delay: 3s;
+    h3 {
+      margin-top: 20px;
+      font-size: 1.2em;
+      color: #2b6e41;
     }
 
-    @keyframes zoomIn {
-      to { transform: scale(1); }
-    }
-
-    @keyframes slideUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    p {
+      font-size: 1em;
+      color: #333;
+      line-height: 1.6;
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
     }
   </style>
 </head>
 <body>
+
+  <div class="plant-card">
+    <img src="tulsi.png" alt="Tulsi Plant" />
+    <h1>Tulsi (तुलसी)</h1>
+    <div class="taxo">
+      <strong>Genus:</strong> Ocimum<br>
+      <strong>Species:</strong> tenuiflorum
+    </div>
+
+    <h3>PROPERTIES</h3>
+    <p>
+      Revered as a sacred plant in India, Tulsi supports immunity, reduces stress, and combats respiratory disorders. It exhibits powerful antioxidant, anti-inflammatory, and antimicrobial properties widely used in Ayurvedic medicine.
+    </p>
+  </div>
+
   <img id="logo" src="school-logo.png" alt="School Logo" />
 
-  <div class="plant">
-    <img src="tulsi.png" alt="Tulsi" />
-    <h2>Tulsi (तुलसी)</h2>
-    <em>Ocimum tenuiflorum</em>
-    <p>Helps the body manage stress, performs antioxidant and antimicrobial actions which can support the immune system and protect against infections.</p>
-  </div>
 </body>
 </html>
